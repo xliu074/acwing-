@@ -54,3 +54,6 @@ int main()
     while(op.size()) eval();
     cout << num.top() << endl;
     return 0;
+}
+//str->int
+/*‘0’ 的 ASCII 码值是 48，‘1’ 的 ASCII 码值是 49，以此类推，所以减去 ‘0’ 的 ASCII 码值就可以得到数字本身。*/
