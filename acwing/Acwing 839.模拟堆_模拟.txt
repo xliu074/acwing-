@@ -1,0 +1,83 @@
+p(ph)         h(hp)
+a(1)          5(1)
+b(2)          3(2)
+c(3)          7(3)
+
+simulation:
+-->
+void heap_swap(int a, int b)
+{
+    swap(ph[hp[a]], ph[hp[b]]);
+    swap(hp[a], hp[b]);
+    swap(h[a], h[b]);
+}
+-->
+heap_swap(5, 3);
+swap(a, b);
+p(ph)        h(hp)
+b(2)         5(1)
+a(1)         3(2)
+c            7(3)
+-->
+swap(1, 2);
+p(ph)        h(hp)
+b(2)         5(1)
+a(1)         3(2)
+c            7(3)
+-->
+swap(5, 3);
+p(ph)        h(hp)
+b(2)         3(2)
+a(1)         5(1)
+c            7(3)
+---finished.
+-->insert_simualtion:
+if(!strcmp(op, "I"))
+{
+    scanf("%d", &x);
+    cnt ++; m ++;
+    ph[m] = cnt;
+    hp[cnt] = m;
+    h[cnt] = x;
+    up[cnt];
+}
+-->
+at first, set is empty.
+
+if x = 5;
+cnt ++ = 1;
+m ++ = 1;
+ph[1] = 1;
+hp[1] = 1;
+h[q] = 5;
+--> 
+p(ph)        h(hp)
+a(1)         5(1)
+-->
+insert again.
+if x = 3;
+cnt ++ = 2;
+m ++ = 2;
+ph[2] = 2;
+hp[2] = 2;
+h[2] = 3;
+-->
+p(ph)        h(hp)
+a(1)         5(1)
+b(2)         3(2)
+--> Delete number that hp[num] = k;
+if(!strcmp(op, "D"))
+{
+    scanf("%d", &k);
+    //k trans to cnt group make heap_swap work
+    k = ph[k];
+    heap_swap(k, cnt);
+    cnt --;
+    up(k);
+    down(k);
+}
+
+
+
+
+
